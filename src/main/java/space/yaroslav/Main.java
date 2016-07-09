@@ -36,10 +36,10 @@ public class Main {
 
 
 
- CurrentWeather currentWeather = new CurrentWeather("21e80236d727d4dfc1b5cae33800a000");
-//        //space.yaroslav.Main class tests :)
+// CurrentWeather currentWeather = new CurrentWeather("21e80236d727d4dfc1b5cae33800a000");
+//        //Main class tests :)
 //        System.out.println(currentWeather.currentWeatherByCityID(1234));
-    System.out.println(currentWeather.currentWeatherByCoordinates(12, 54));
+  //  System.out.println(currentWeather.currentWeatherByCoordinates(12, 54));
 //        System.out.println(currentWeather.currentWeatherByZIP(94040, "us"));
 //        currentWeather.setResponseMode(ResponseMode.HTML);
 //        System.out.println(currentWeather.currentWeatherByCityID(1234));

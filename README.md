@@ -40,7 +40,7 @@ In case of using this like executable file: type command in console
     
 Then read manual and use it.
 
-In case of using it like library, you have to add weather-0.1-SNAPSHOT-jar-with-dependencies.jar --help in project dependencyes.
+In case of using it like library, you have to add **weather-0.1-SNAPSHOT-jar-with-dependencies.jar** in project dependencyes.
 Using of this library represents a wrapper class CurrentWeather. In this case in the class constructor you have to transfer your API-key, which one you can get on weather service website, or use mine: 21e80236d727d4dfc1b5cae33800a000
 
 Wrapper class have all capabilityes you need and all methods have javadoc. Methods return WeatherParams class, which fields contains weather's parametrs. It have overrided method toString for better using.

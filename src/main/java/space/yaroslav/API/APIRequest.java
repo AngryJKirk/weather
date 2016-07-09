@@ -1,4 +1,4 @@
-package space.yaroslav.apilogic;
+package space.yaroslav.API;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.net.URLConnection;
 public final class APIRequest {
     private static final String ApiURL = "http://api.openweathermap.org/data/2.5/weather?";
 
-    public static String getAPIAnswer(String city, APIKey key, String mode) throws IOException {
+    public static String getAPIAnswerByCityName(String city, APIKey key, String mode) throws IOException {
         if (isJSONMode(mode)) {
             throw new IllegalArgumentException("JSON required");
         }
@@ -24,7 +24,7 @@ public final class APIRequest {
 
     }
 
-    public static String getAPIAnswer(int id, APIKey key, String mode) {
+    public static String getAPIAnswerByCityID(int id, APIKey key, String mode) {
         if (isJSONMode(mode)) {
             throw new IllegalArgumentException("JSON required");
         }
@@ -36,7 +36,7 @@ public final class APIRequest {
                 .toString());
     }
 
-    public static String getAPIAnswer(int zip, String countryCode, APIKey key, String mode) {
+    public static String getAPIAnswerByZipCode(int zip, String countryCode, APIKey key, String mode) {
         if (isJSONMode(mode)) {
             throw new IllegalArgumentException("JSON required");
         }
@@ -50,7 +50,7 @@ public final class APIRequest {
 
     }
 
-    public static String getAPIAnswer(int lat, int lon, APIKey key, String mode) {
+    public static String getAPIAnswerByCoordinates(int lat, int lon, APIKey key, String mode) {
         if (isJSONMode(mode)) {
             throw new IllegalArgumentException("JSON required");
         }

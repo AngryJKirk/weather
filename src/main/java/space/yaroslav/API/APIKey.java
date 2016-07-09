@@ -1,4 +1,6 @@
-package space.yaroslav.apilogic;
+package space.yaroslav.API;
+
+
 
 public final class APIKey {
 

@@ -1,5 +1,8 @@
 package space.yaroslav.weather;
 
+import space.yaroslav.pojos.ResponseMode;
+import space.yaroslav.pojos.WeatherParams;
+
 import java.io.IOException;
 
 public interface IWeather {

@@ -1,4 +1,4 @@
-package space.yaroslav.weather;
+package space.yaroslav.pojos;
 
 public enum ResponseMode {
     JSON, XML, HTML

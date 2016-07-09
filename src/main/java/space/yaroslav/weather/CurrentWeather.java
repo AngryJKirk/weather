@@ -1,13 +1,14 @@
-package space.yaroslav;
+package space.yaroslav.weather;
 
-import space.yaroslav.apilogic.APIKey;
-import space.yaroslav.apilogic.APIRequest;
+import space.yaroslav.API.APIKey;
 import com.google.gson.Gson;
 import space.yaroslav.weather.IWeather;
-import space.yaroslav.weather.ResponseMode;
-import space.yaroslav.weather.WeatherParams;
+import space.yaroslav.pojos.ResponseMode;
+import space.yaroslav.pojos.WeatherParams;
 
 import java.io.IOException;
+
+import static space.yaroslav.API.APIRequest.*;
 
 
 /**
@@ -36,7 +37,7 @@ public class CurrentWeather implements IWeather {
      */
     public WeatherParams currentWeatherByCityName(String city) throws IOException {
 
-        String answer = APIRequest.getAPIAnswer(city, apiKey, responseMode.toString());
+        String answer = getAPIAnswerByCityName(city, apiKey, responseMode.toString());
         Gson gson = new Gson();
         return gson.fromJson(answer, WeatherParams.class);
     }
@@ -46,7 +47,7 @@ public class CurrentWeather implements IWeather {
      * @return WeatherParams is POJO with important fields with weather params
      */
     public WeatherParams currentWeatherByCityID(int id) {
-        String answer = APIRequest.getAPIAnswer(id, apiKey, responseMode.toString());
+        String answer = getAPIAnswerByCityID(id, apiKey, responseMode.toString());
         Gson gson = new Gson();
         return gson.fromJson(answer, WeatherParams.class);
     }
@@ -58,7 +59,7 @@ public class CurrentWeather implements IWeather {
      */
     public WeatherParams currentWeatherByZIP(int zip, String countryCode) {
 
-        String answer = APIRequest.getAPIAnswer(zip, countryCode, apiKey, responseMode.toString());
+        String answer = getAPIAnswerByZipCode(zip, countryCode, apiKey, responseMode.toString());
         Gson gson = new Gson();
         return gson.fromJson(answer, WeatherParams.class);
 
@@ -70,7 +71,7 @@ public class CurrentWeather implements IWeather {
      * @return WeatherParams is POJO with important fields with weather params
      */
     public WeatherParams currentWeatherByCoordinates(int lat, int lon) {
-        String answer = APIRequest.getAPIAnswer(lat, lon, apiKey, responseMode.toString());
+        String answer = getAPIAnswerByCoordinates(lat, lon, apiKey, responseMode.toString());
         Gson gson = new Gson();
         return gson.fromJson(answer, WeatherParams.class);
     }

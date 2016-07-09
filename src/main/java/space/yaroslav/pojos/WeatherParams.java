@@ -1,4 +1,4 @@
-package space.yaroslav.weather;
+package space.yaroslav.pojos;
 
 
 import java.util.ArrayList;
@@ -47,62 +47,6 @@ public class WeatherParams {
 
         return String.format("In %s there is/are %s. Temperature is %f, pressure is %f, humidity is %f, wind's speed is %f", name, weather.get(0).getDescription(), main.getTemp() - 273, main.getPressure(), main.getHumidity(), wind.getSpeed());
     }
-}
-
-
-class Wind {
-
-
-    private float speed;
-
-    public float getSpeed() {
-        return speed;
-    }
-
-
-}
-
-
-class MainInfo {
-
-
-    private float temp;
-
-    private float pressure;
-
-    private float humidity;
-
-    public float getPressure() {
-        return pressure;
-    }
-
-
-    public float getHumidity() {
-        return humidity;
-    }
-
-
-    public float getTemp() {
-        return temp;
-    }
-}
-
-
-class Weather {
-
-    private String main;
-
-    private String description;
-
-    public String getMain() {
-        return main;
-    }
-
-
-    public String getDescription() {
-        return description;
-    }
-
 }
 
 

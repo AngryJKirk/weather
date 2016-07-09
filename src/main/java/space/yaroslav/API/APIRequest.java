@@ -65,6 +65,7 @@ public final class APIRequest {
 
     private static String getHttpAnswer(String url) {
         URL api = null;
+
         //TODO handle exceptions in a right way
         try {
             api = new URL(url);

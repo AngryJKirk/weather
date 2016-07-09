@@ -2,7 +2,6 @@ package space.yaroslav.weather;
 
 import space.yaroslav.API.APIKey;
 import com.google.gson.Gson;
-import space.yaroslav.weather.IWeather;
 import space.yaroslav.pojos.ResponseMode;
 import space.yaroslav.pojos.WeatherParams;
 
@@ -14,12 +13,11 @@ import static space.yaroslav.API.APIRequest.*;
 /**
  * This class is a class-wrap with API for http://openweathermap.org/
  * To use this you have to set an API key. Its avaliable free on their site.
- *
  */
-public class CurrentWeather implements IWeather {
+public class CurrentWeather implements Weathers {
 
     private APIKey apiKey;
-
+    private Gson gson = new Gson();
     private ResponseMode responseMode = ResponseMode.JSON;
 
     public CurrentWeather(String key) {
@@ -38,7 +36,7 @@ public class CurrentWeather implements IWeather {
     public WeatherParams currentWeatherByCityName(String city) throws IOException {
 
         String answer = getAPIAnswerByCityName(city, apiKey, responseMode.toString());
-        Gson gson = new Gson();
+
         return gson.fromJson(answer, WeatherParams.class);
     }
 
@@ -48,7 +46,7 @@ public class CurrentWeather implements IWeather {
      */
     public WeatherParams currentWeatherByCityID(int id) {
         String answer = getAPIAnswerByCityID(id, apiKey, responseMode.toString());
-        Gson gson = new Gson();
+
         return gson.fromJson(answer, WeatherParams.class);
     }
 
@@ -60,7 +58,7 @@ public class CurrentWeather implements IWeather {
     public WeatherParams currentWeatherByZIP(int zip, String countryCode) {
 
         String answer = getAPIAnswerByZipCode(zip, countryCode, apiKey, responseMode.toString());
-        Gson gson = new Gson();
+
         return gson.fromJson(answer, WeatherParams.class);
 
     }
@@ -72,7 +70,7 @@ public class CurrentWeather implements IWeather {
      */
     public WeatherParams currentWeatherByCoordinates(int lat, int lon) {
         String answer = getAPIAnswerByCoordinates(lat, lon, apiKey, responseMode.toString());
-        Gson gson = new Gson();
+
         return gson.fromJson(answer, WeatherParams.class);
     }
 

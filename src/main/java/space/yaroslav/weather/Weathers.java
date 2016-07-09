@@ -5,7 +5,7 @@ import space.yaroslav.pojos.WeatherParams;
 
 import java.io.IOException;
 
-public interface IWeather {
+public interface Weathers {
 
 
     void setKey(String key);

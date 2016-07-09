@@ -42,7 +42,6 @@ public class WeatherParams {
     @Override
     public String toString() {
         if (cod == 404) return "There are no such city. Try again.";
-
         if (cod == 401) return "Your API-key is invalid";
 
         return String.format("In %s there is/are %s. Temperature is %f, pressure is %f, humidity is %f, wind's speed is %f", name, weather.get(0).getDescription(), main.getTemp() - 273, main.getPressure(), main.getHumidity(), wind.getSpeed());

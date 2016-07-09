@@ -1,11 +1,11 @@
-
+package space.yaroslav.weather;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-class WeatherParams {
-
+public class WeatherParams {
+//TODO add getters for inner classes
     private List<Weather> weather = new ArrayList<Weather>();
 
     private MainInfo main;
@@ -13,6 +13,14 @@ class WeatherParams {
     private Wind wind;
 
     private String name;
+
+    private int cod;
+
+    public int getCod() {
+        return cod;
+    }
+
+
 
     public List<Weather> getWeather() {
         return weather;
@@ -33,7 +41,11 @@ class WeatherParams {
 
     @Override
     public String toString() {
-        return String.format("In %s there are %s. Temperature is %f, pressure is %f, humidity is %f, wind's speed is %f", name, weather.get(0).getDescription(), main.getTemp() - 273, main.getPressure(), main.getHumidity(), wind.getSpeed());
+        if (cod == 404) return "There are no such city. Try again.";
+
+        if (cod == 401) return "Your API-key is invalid";
+
+        return String.format("In %s there is/are %s. Temperature is %f, pressure is %f, humidity is %f, wind's speed is %f", name, weather.get(0).getDescription(), main.getTemp() - 273, main.getPressure(), main.getHumidity(), wind.getSpeed());
     }
 }
 

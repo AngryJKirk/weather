@@ -1,6 +1,4 @@
-package APILogic;
-
-import APILogic.APIKey;
+package space.yaroslav.apilogic;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,10 +8,13 @@ import java.net.URL;
 import java.net.URLConnection;
 
 
-public class APIRequest {
+public final class APIRequest {
     private static final String ApiURL = "http://api.openweathermap.org/data/2.5/weather?";
 
     public static String getAPIAnswer(String city, APIKey key, String mode) throws IOException {
+        if (isJSONMode(mode)) {
+            throw new IllegalArgumentException("JSON required");
+        }
         StringBuilder URL = new StringBuilder(ApiURL);
         return getHttpAnswer(URL
                 .append(String.format("q=%s", city))
@@ -24,6 +25,9 @@ public class APIRequest {
     }
 
     public static String getAPIAnswer(int id, APIKey key, String mode) {
+        if (isJSONMode(mode)) {
+            throw new IllegalArgumentException("JSON required");
+        }
         StringBuilder URL = new StringBuilder(ApiURL);
         return getHttpAnswer(URL.
                 append(String.format("id=%d", id))
@@ -33,6 +37,9 @@ public class APIRequest {
     }
 
     public static String getAPIAnswer(int zip, String countryCode, APIKey key, String mode) {
+        if (isJSONMode(mode)) {
+            throw new IllegalArgumentException("JSON required");
+        }
         StringBuilder URL = new StringBuilder(ApiURL);
         return getHttpAnswer(URL
                 .append(String.format("zip=%d", zip))
@@ -44,6 +51,9 @@ public class APIRequest {
     }
 
     public static String getAPIAnswer(int lat, int lon, APIKey key, String mode) {
+        if (isJSONMode(mode)) {
+            throw new IllegalArgumentException("JSON required");
+        }
         StringBuilder URL = new StringBuilder(ApiURL);
         return getHttpAnswer(URL
                 .append(String.format("lat=%d", lat))
@@ -71,6 +81,10 @@ public class APIRequest {
             e.printStackTrace();
         }
         return url;
+    }
+
+    private static boolean isJSONMode(String mode) {
+        return !(mode.equals("JSON"));
     }
 }
 

@@ -1,7 +1,8 @@
+package space.yaroslav.weather;
+
 import java.io.IOException;
 
 public interface IWeather {
-
 
 
     void setKey(String key);

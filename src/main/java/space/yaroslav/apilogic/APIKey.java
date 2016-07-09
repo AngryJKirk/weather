@@ -1,6 +1,6 @@
-package APILogic;
+package space.yaroslav.apilogic;
 
-public class APIKey {
+public final class APIKey {
 
 
     private final String key;

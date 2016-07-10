@@ -14,7 +14,7 @@ public class Main {
 
         CurrentWeather currentWeather = new CurrentWeather(defaultApiKey);
         if (args.length == 1 && args[0].equals("--help")) {
-            System.out.println("This is weatherLogic app");
+            System.out.println("This is weather app");
             System.out.println("usage: [params_key] [city's date]");
             System.out.println("Options:" +
                     "\n-name {name}\t Input city's name" +

@@ -1,6 +1,6 @@
 package space.yaroslav.pojos;
 
-class Weather {
+class WeatherInfo {
 
     private String main;
 

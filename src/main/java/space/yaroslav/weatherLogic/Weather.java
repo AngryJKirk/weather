@@ -1,11 +1,11 @@
-package space.yaroslav.weather;
+package space.yaroslav.weatherLogic;
 
 import space.yaroslav.pojos.ResponseMode;
 import space.yaroslav.pojos.WeatherParams;
 
 import java.io.IOException;
 
-public interface Weathers {
+public interface Weather {
 
 
     void setKey(String key);

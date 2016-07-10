@@ -6,7 +6,7 @@ import java.util.List;
 
 public class WeatherParams {
 //TODO add getters for inner classes
-    private List<Weather> weather = new ArrayList<Weather>();
+    private List<WeatherInfo> weather = new ArrayList<WeatherInfo>();
 
     private MainInfo main;
 
@@ -22,7 +22,7 @@ public class WeatherParams {
 
 
 
-    public List<Weather> getWeather() {
+    public List<WeatherInfo> getWeather() {
         return weather;
     }
 

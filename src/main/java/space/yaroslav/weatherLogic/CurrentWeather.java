@@ -1,4 +1,4 @@
-package space.yaroslav.weather;
+package space.yaroslav.weatherLogic;
 
 import space.yaroslav.API.APIKey;
 import com.google.gson.Gson;
@@ -14,7 +14,7 @@ import static space.yaroslav.API.APIRequest.*;
  * This class is a class-wrap with API for http://openweathermap.org/
  * To use this you have to set an API key. Its avaliable free on their site.
  */
-public class CurrentWeather implements Weathers {
+public class CurrentWeather implements Weather {
 
     private APIKey apiKey;
     private Gson gson = new Gson();
@@ -31,7 +31,7 @@ public class CurrentWeather implements Weathers {
 
     /**
      * @param city City wheather's you want to know
-     * @return WeatherParams is POJO with important fields with weather params
+     * @return WeatherParams is POJO with important fields with weatherLogic params
      */
     public WeatherParams currentWeatherByCityName(String city) throws IOException {
 
@@ -42,7 +42,7 @@ public class CurrentWeather implements Weathers {
 
     /**
      * @param id City id from http://bulk.openweathermap.org/sample/
-     * @return WeatherParams is POJO with important fields with weather params
+     * @return WeatherParams is POJO with important fields with weatherLogic params
      */
     public WeatherParams currentWeatherByCityID(int id) {
         String answer = getAPIAnswerByCityID(id, apiKey, responseMode.toString());
@@ -53,7 +53,7 @@ public class CurrentWeather implements Weathers {
     /**
      * @param zip         zip code of city you need
      * @param countryCode country cod from ISO 3166 standart
-     * @return WeatherParams is POJO with important fields with weather params
+     * @return WeatherParams is POJO with important fields with weatherLogic params
      */
     public WeatherParams currentWeatherByZIP(int zip, String countryCode) {
 
@@ -64,9 +64,9 @@ public class CurrentWeather implements Weathers {
     }
 
     /**
-     * @param lat Latitude of place's weather you need
-     * @param lon Longitude of place's weather you need
-     * @return WeatherParams is POJO with important fields with weather params
+     * @param lat Latitude of place's weatherLogic you need
+     * @param lon Longitude of place's weatherLogic you need
+     * @return WeatherParams is POJO with important fields with weatherLogic params
      */
     public WeatherParams currentWeatherByCoordinates(int lat, int lon) {
         String answer = getAPIAnswerByCoordinates(lat, lon, apiKey, responseMode.toString());

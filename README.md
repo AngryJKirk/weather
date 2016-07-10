@@ -32,7 +32,7 @@ Usecases:
 - current weather by city's name
 - current weather by city's ID (http://bulk.openweathermap.org/sample/ -- full ID's list)
 - current weather by ZIP-code and country code (like uk, ru etc)
-- current weather by geografical coordinates
+- current weather by geographical coordinates
 
 In case of using this like executable file: type command in console 
 
